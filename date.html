@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page suivante encore</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f9f2f4; /* Couleur de fond rose clair */
+        }
+
+        h1 {
+            color: #ff69b4; /* Couleur rose */
+            font-size: 48px; /* Taille du texte */
+            margin-top: 0; /* Supprime la marge par défaut du titre */
+        }
+
+        p {
+            font-size: 28px; /* Taille du texte du paragraphe */
+            text-align: center;
+            margin-bottom: 20px; /* Espace en bas du paragraphe */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px; /* Espace au-dessus du formulaire */
+        }
+
+        label {
+            font-size: 20px; /* Taille du texte du label */
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        footer {
+            font-size: 16px; /* Taille du texte du pied de page */
+            color: #555; /* Couleur du texte gris foncé */
+        }
+    </style>
+</head>
+<body>
+    <h1>Je veux te voir pour qu'on parle de tout, choisis un jour</h1>
+
+    <form>
+        <label for="chosenDate">Sélectionner une date :</label>
+        <input type="date" id="chosenDate" name="chosenDate" required>
+    </form>
+    
+    <footer>
+        <p>(Prends en photo la date et envoie-moi pcq je ne peux pas voir ta réponse mdrr)</p>
+    </footer>
+</body>
+</html>
