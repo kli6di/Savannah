@@ -39,7 +39,7 @@
             position: relative;
         }
 
-        .outerPhotoBox {
+        .smallPhotoBox {
             width: 100px;
             height: 100px;
             border: 2px dashed #ff69b4; /* Bordure en pointillés rose */
@@ -48,23 +48,22 @@
             position: relative;
         }
 
-        .photoContainerOuter {
+        .photoContainerInner {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 10px;
         }
 
-        .photoContainerInner {
-            display: flex;
-            align-items: center;
-            margin: 10px;
-        }
-
-        .outerPhotoBox img, .largePhotoBox img {
+        .largePhotoBox img, .smallPhotoBox img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            pointer-events: none; /* Les images ne peuvent pas être glissées-déposées directement */
+        }
+
+        .smallPhotoBox img {
+            pointer-events: auto; /* Autorise le glisser-déposer sur les petites images */
         }
     </style>
 </head>
@@ -72,56 +71,49 @@
     <h1>Comment je m'habille?</h1>
 
     <div id="photoContainer">
-        <div class="photoContainerOuter">
-            <div class="outerPhotoBox" id="outerPhotoBox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-
         <div class="photoContainerInner">
             <div class="largePhotoBox" id="largePhotoBox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-
-        <div class="photoContainerOuter">
-            <div class="outerPhotoBox" id="outerPhotoBox2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-
-        <div class="photoContainerOuter">
-            <div class="outerPhotoBox" id="outerPhotoBox3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
 
         <div class="photoContainerInner">
             <div class="largePhotoBox" id="largePhotoBox2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
 
-        <div class="photoContainerOuter">
-            <div class="outerPhotoBox" id="outerPhotoBox4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-
-        <div class="photoContainerOuter">
-            <div class="outerPhotoBox" id="outerPhotoBox5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>
-
         <div class="photoContainerInner">
             <div class="largePhotoBox" id="largePhotoBox3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
+    </div>
 
-        <div class="photoContainerOuter">
-            <div class="outerPhotoBox" id="outerPhotoBox6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="smallPhotoContainer" style="display: flex; justify-content: space-around; margin-top: 20px;">
+        <div class="smallPhotoBox" id="smallPhotoBox1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="Capture 1.PNG" alt="Photo 1" draggable="true" ondragstart="drag(event)">
         </div>
-
-        <div class="photoContainerOuter">
-            <div class="outerPhotoBox" id="outerPhotoBox7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="smallPhotoBox" id="smallPhotoBox2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="Capture2.PNG" alt="Photo 2" draggable="true" ondragstart="drag(event)">
         </div>
-
-        <div class="photoContainerOuter">
-            <div class="outerPhotoBox" id="outerPhotoBox8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="smallPhotoBox" id="smallPhotoBox3" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="O1CN01QuvTeG22WfwtqVV2B_!!1741827128.avif" alt="Photo 3" draggable="true" ondragstart="drag(event)">
         </div>
-
-        <div class="photoContainerOuter">
-            <div class="outerPhotoBox" id="outerPhotoBox9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="smallPhotoBox" id="smallPhotoBox4" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="sweatshirts-hoodie-zippc3a9-ami-de-coeur-rose-ami-paris-homme.jpg" alt="Photo 4" draggable="true" ondragstart="drag(event)">
         </div>
-
-        <div class="photoContainerOuter">
-            <div class="outerPhotoBox" id="outerPhotoBox10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="smallPhotoBox" id="smallPhotoBox5" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="NormalPI24206994679PandaBuyOriginal2_1707288239291.jpg" alt="Photo 5" draggable="true" ondragstart="drag(event)">
+        </div>
+        <div class="smallPhotoBox" id="smallPhotoBox6" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="pcitem1230640363-357a00000187ad255d9a0a2301a5_1170_1397.jpg" alt="Photo 6" draggable="true" ondragstart="drag(event)">
+        </div>
+        <div class="smallPhotoBox" id="smallPhotoBox7" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="OIP (1).jpg" alt="Photo 7" draggable="true" ondragstart="drag(event)">
+        </div>
+        <div class="smallPhotoBox" id="smallPhotoBox8" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="OIP (2).jpg" alt="Photo 8" draggable="true" ondragstart="drag(event)">
+        </div>
+        <div class="smallPhotoBox" id="smallPhotoBox9" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="OIP.jpg" alt="Photo 9" draggable="true" ondragstart="drag(event)">
+        </div>
+        <div class="smallPhotoBox" id="smallPhotoBox10" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="love.jpg" alt="Photo 10" draggable="true" ondragstart="drag(event)">
         </div>
     </div>
 
@@ -130,18 +122,19 @@
             event.preventDefault();
         }
 
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.src);
+        }
+
         function drop(event) {
             event.preventDefault();
             var draggedPhoto = event.dataTransfer.getData("text");
             var targetBox = event.target;
 
-            // Vérifier si la cible est une boîte de photo et s'il n'y a pas déjà une image
-            if (targetBox.classList.contains('largePhotoBox') && !targetBox.querySelector('img')) {
-                var img = document.createElement("img");
-                img.src = draggedPhoto;
-                targetBox.appendChild(img);
-            }
-            else if (targetBox.classList.contains('outerPhotoBox') && !targetBox.querySelector('img')) {
+            // Vérifier si la cible est une boîte de photo
+            if (targetBox.classList.contains('largePhotoBox')) {
+                // Remplacer l'image actuelle par la nouvelle
+                targetBox.innerHTML = ''; // Supprimer l'ancienne image
                 var img = document.createElement("img");
                 img.src = draggedPhoto;
                 targetBox.appendChild(img);
