@@ -65,6 +65,22 @@
         .smallPhotoBox img {
             pointer-events: auto; /* Autorise le glisser-déposer sur les petites images */
         }
+
+        #validationButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            pointer-events: none; /* Le bouton est désactivé par défaut */
+        }
+
+        #validationButton:enabled {
+            pointer-events: auto; /* Activer le bouton lorsque les grandes cases sont remplies */
+        }
     </style>
 </head>
 <body>
@@ -86,36 +102,38 @@
 
     <div id="smallPhotoContainer" style="display: flex; justify-content: space-around; margin-top: 20px;">
         <div class="smallPhotoBox" id="smallPhotoBox1" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img src="Capture 1.PNG" alt="Photo 1" draggable="true" ondragstart="drag(event)">
+            <img src="O1CN01QuvTeG22WfwtqVV2B_!!1741827128.avif" alt="Photo 1" draggable="true" ondragstart="drag(event)">
         </div>
         <div class="smallPhotoBox" id="smallPhotoBox2" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img src="Capture2.PNG" alt="Photo 2" draggable="true" ondragstart="drag(event)">
+            <img src="OIP (1).jpg" alt="Photo 2" draggable="true" ondragstart="drag(event)">
         </div>
         <div class="smallPhotoBox" id="smallPhotoBox3" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img src="O1CN01QuvTeG22WfwtqVV2B_!!1741827128.avif" alt="Photo 3" draggable="true" ondragstart="drag(event)">
+            <img src="OIP (2).jpg" alt="Photo 3" draggable="true" ondragstart="drag(event)">
         </div>
         <div class="smallPhotoBox" id="smallPhotoBox4" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img src="sweatshirts-hoodie-zippc3a9-ami-de-coeur-rose-ami-paris-homme.jpg" alt="Photo 4" draggable="true" ondragstart="drag(event)">
+            <img src="OIP.jpg" alt="Photo 4" draggable="true" ondragstart="drag(event)">
         </div>
         <div class="smallPhotoBox" id="smallPhotoBox5" ondrop="drop(event)" ondragover="allowDrop(event)">
             <img src="NormalPI24206994679PandaBuyOriginal2_1707288239291.jpg" alt="Photo 5" draggable="true" ondragstart="drag(event)">
         </div>
         <div class="smallPhotoBox" id="smallPhotoBox6" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img src="pcitem1230640363-357a00000187ad255d9a0a2301a5_1170_1397.jpg" alt="Photo 6" draggable="true" ondragstart="drag(event)">
+            <img src="sweatshirts-hoodie-zippc3a9-ami-de-coeur-rose-ami-paris-homme.jpg" alt="Photo 6" draggable="true" ondragstart="drag(event)">
         </div>
         <div class="smallPhotoBox" id="smallPhotoBox7" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img src="OIP (1).jpg" alt="Photo 7" draggable="true" ondragstart="drag(event)">
+            <img src="pcitem1230640363-357a00000187ad255d9a0a2301a5_1170_1397.jpg" alt="Photo 7" draggable="true" ondragstart="drag(event)">
         </div>
         <div class="smallPhotoBox" id="smallPhotoBox8" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img src="OIP (2).jpg" alt="Photo 8" draggable="true" ondragstart="drag(event)">
+            <img src="Capture 1.PNG" alt="Photo 8" draggable="true" ondragstart="drag(event)">
         </div>
         <div class="smallPhotoBox" id="smallPhotoBox9" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <img src="OIP.jpg" alt="Photo 9" draggable="true" ondragstart="drag(event)">
+            <img src="Capture2.PNG" alt="Photo 9" draggable="true" ondragstart="drag(event)">
         </div>
         <div class="smallPhotoBox" id="smallPhotoBox10" ondrop="drop(event)" ondragover="allowDrop(event)">
             <img src="love.jpg" alt="Photo 10" draggable="true" ondragstart="drag(event)">
         </div>
     </div>
+
+    <button id="validationButton" onclick="validateAndProceed()">Valider</button>
 
     <script>
         function allowDrop(event) {
@@ -140,9 +158,22 @@
                 targetBox.appendChild(img);
             }
         }
+
+        function validateAndProceed() {
+            var largePhotoBox1 = document.getElementById('largePhotoBox1');
+            var largePhotoBox2 = document.getElementById('largePhotoBox2');
+            var largePhotoBox3 = document.getElementById('largePhotoBox3');
+
+            // Vérifier si les trois grandes cases sont remplies
+            if (largePhotoBox1.querySelector('img') && largePhotoBox2.querySelector('img') && largePhotoBox3.querySelector('img')) {
+                // Rediriger vers la nouvelle page
+                window.location.href = "nouvelle_page.html";
+            }
+        }
     </script>
 </body>
 </html>
+
 
 
 
