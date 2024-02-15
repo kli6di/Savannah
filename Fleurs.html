@@ -24,9 +24,84 @@
             text-align: center;
             font-family: 'Pacifico', cursive; /* Police de caractères stylée */
         }
+
+        #flowerPhoto {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        #colorChoices {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .colorChoice {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 10px;
+            cursor: pointer;
+            border: 2px solid transparent; /* Bordure transparente par défaut */
+        }
+
+        #validationButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            pointer-events: none; /* Le bouton est désactivé par défaut */
+        }
+
+        #validationButton:enabled {
+            pointer-events: auto; /* Activer le bouton lorsque la sélection est faite */
+        }
     </style>
 </head>
 <body>
     <h1>Choisi ton bouquet de fleurs</h1>
+
+    <img id="flowerPhoto" src="IMG_1216[1126].jpg" alt="Bouquet de fleurs">
+
+    <div id="colorChoices">
+        <div class="colorChoice" style="background-color: #88203a;" onclick="selectColor('#88203a')"></div>
+        <div class="colorChoice" style="background-color: #ff69b4;" onclick="selectColor('#ff69b4')"></div>
+        <div class="colorChoice" style="background-color: #ff0000;" onclick="selectColor('#ff0000')"></div>
+        <div class="colorChoice" style="background-color: #ffd700;" onclick="selectColor('#ffd700')"></div>
+        <div class="colorChoice" style="background-color: #8a2be2;" onclick="selectColor('#8a2be2')"></div>
+        <div class="colorChoice" style="background-color: #c0c0c0;" onclick="selectColor('#c0c0c0')"></div>
+    </div>
+
+    <button id="validationButton" onclick="validateAndProceed()">Valider</button>
+
+    <script>
+        var selectedColor = null;
+
+        function selectColor(color) {
+            // Réinitialiser les bordures pour tous les choix
+            var colorChoices = document.getElementsByClassName('colorChoice');
+            for (var i = 0; i < colorChoices.length; i++) {
+                colorChoices[i].style.border = '2px solid transparent';
+            }
+
+            // Mettre en surbrillance le choix sélectionné
+            selectedColor = color;
+            document.querySelector('.colorChoice[style*="' + color + '"]').style.border = '2px solid #ff69b4';
+
+            // Activer le bouton de validation
+            document.getElementById('validationButton').disabled = false;
+        }
+
+        function validateAndProceed() {
+            if (selectedColor) {
+                // Rediriger vers la nouvelle page
+                window.location.href = "Resto.html";
+            }
+        }
+    </script>
 </body>
 </html>
