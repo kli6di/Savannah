@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peut-on se reparler?</title>
+    <title>On se reparle?</title>
     <style>
         body {
             display: flex;
@@ -58,7 +58,7 @@
     </style>
 </head>
 <body>
-    <h1>Peut-on se reparler?</h1>
+    <h1>On se reparle?</h1>
     <div class="flower-frame">
         <img src="R.jpg" alt="Image de R">
     </div>
