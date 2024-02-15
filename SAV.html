@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>On se reparle?</title>
+    <title>Peut-on se reparler?</title>
     <style>
         body {
             display: flex;
@@ -55,21 +55,45 @@
         #buttonNo {
             background-color: #ff3333; /* Couleur rouge pour le bouton Non */
         }
+
+        /* Nouveau style pour la page grise */
+        #grayPage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #808080; /* Couleur grise */
+        }
+
+        #grayPage img {
+            width: 400px; /* Taille de l'image */
+            height: auto;
+            margin-bottom: 20px; /* Espace en bas de l'image */
+        }
+
+        #audio {
+            display: none; /* Masque l'élément audio par défaut */
+        }
     </style>
 </head>
 <body>
-    <h1>On se reparle?</h1>
+    <h1>Peut-on se reparler?</h1>
     <div class="flower-frame">
         <img src="R.jpg" alt="Image de R">
     </div>
     <div id="buttonContainer">
         <button id="buttonYes" onclick="redirectToYouuhou()">Oui</button>
-        <button id="buttonNo">Non</button>
+        <button id="buttonNo" onclick="redirectToGrayPage()">Non</button>
     </div>
 
     <script>
         function redirectToYouuhou() {
             window.location.href = 'youuhou.html';
+        }
+
+        function redirectToGrayPage() {
+            window.location.href = 'grayPage.html';
         }
     </script>
 </body>
