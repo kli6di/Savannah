@@ -55,6 +55,26 @@
         #buttonNo {
             background-color: #ff3333; /* Couleur rouge pour le bouton Non */
         }
+
+        /* Nouveau style pour la page grise */
+        #grayPage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #808080; /* Couleur grise */
+        }
+
+        #grayPage img {
+            width: 400px; /* Taille de l'image */
+            height: auto;
+            margin-bottom: 20px; /* Espace en bas de l'image */
+        }
+
+        #audio {
+            display: none; /* Masque l'élément audio par défaut */
+        }
     </style>
 </head>
 <body>
@@ -64,12 +84,16 @@
     </div>
     <div id="buttonContainer">
         <button id="buttonYes" onclick="redirectToYouuhou()">Oui</button>
-        <button id="buttonNo">Non</button>
+        <button id="buttonNo" onclick="redirectToGrayPage()">Non</button>
     </div>
 
     <script>
         function redirectToYouuhou() {
             window.location.href = 'youuhou.html';
+        }
+
+        function redirectToGrayPage() {
+            window.location.href = 'grayPage.html';
         }
     </script>
 </body>
