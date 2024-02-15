@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gray Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #808080; /* Couleur grise */
+            margin: 0;
+            filter: grayscale(100%); /* Appliquer le filtre gris sur toute la page */
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px; /* Espace en bas de l'image */
+            filter: grayscale(0); /* Annuler le filtre gris sur l'image */
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: 20%; /* Ajustez la position verticale selon vos besoins */
+            left: 50%; /* Ajustez la position horizontale selon vos besoins */
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            height: auto;
+            z-index: 1; /* Assurez-vous que la nouvelle image est au-dessus de l'image existante */
+        }
+    </style>
+</head>
+<body>
+    <img src="IMG_1097.PNG" alt="Image au milieu">
+    <img class="overlay-image" src="tempsnip.png" alt="Nouvelle Image">
+    <audio id="audio" controls autoplay>
+        <source src="utomp3.com - Vous Êtes Mort  GTA V.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
