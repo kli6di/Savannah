@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu veux manger quoi?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Aligner le contenu en haut */
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f5dc; /* Nouvelle nuance de beige */
+            font-family: 'Arial', sans-serif; /* Police de caractères par défaut */
+        }
+
+        h1 {
+            color: #ff69b4; /* Couleur rose */
+            font-size: 48px; /* Taille du texte */
+            margin-top: 20px; /* Espace au-dessus du titre */
+            text-align: center;
+            font-family: 'Pacifico', cursive; /* Police de caractères stylée */
+        }
+
+        .mealChoice {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .mealOption {
+            margin: 10px;
+            text-align: center;
+        }
+
+        input[type="radio"] {
+            display: none; /* Cacher les boutons radio par défaut */
+        }
+
+        label {
+            cursor: pointer;
+            position: relative;
+            display: block;
+        }
+
+        label img {
+            width: 200px; /* Taille agrandie des images */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px; /* Espace en bas de chaque image */
+        }
+
+        .description {
+            font-size: 16px;
+            color: #555; /* Couleur du texte gris foncé */
+        }
+
+        input[type="radio"]:checked + label img {
+            border: 2px solid #ff69b4; /* Bordure rose pour indiquer la sélection */
+        }
+    </style>
+</head>
+<body>
+    <h1>Tu veux manger quoi?</h1>
+
+    <div class="mealChoice">
+        <div class="mealOption">
+            <input type="radio" id="italian" name="meal" value="Italian">
+            <label for="italian">
+                <img src="pasta1.jpg" alt="Italian">
+                <div class="description">Cuisine italienne</div>
+            </label>
+        </div>
+
+        <div class="mealOption">
+            <input type="radio" id="mexican" name="meal" value="Mexican">
+            <label for="mexican">
+                <img src="tacos_plat_fotolia.jpg" alt="Mexican">
+                <div class="description">Tacos mexicains authentiques</div>
+            </label>
+        </div>
+
+        <div class="mealOption">
+            <input type="radio" id="asian" name="meal" value="Asian">
+            <label for="asian">
+                <img src="repas-asiatique.jpg" alt="Asian">
+                <div class="description">Saveurs asiatiques</div>
+            </label>
+        </div>
+
+        <div class="mealOption">
+            <input type="radio" id="indian" name="meal" value="Indian">
+            <label for="indian">
+                <img src="la-cuisine-indienne-3.jpg" alt="Indian">
+                <div class="description">Plats indiens épicés</div>
+            </label>
+        </div>
+
+        <div class="mealOption">
+            <input type="radio" id="fastfood" name="meal" value="Fast Food">
+            <label for="fastfood">
+                <img src="daves-hot-chicken.jpeg" alt="Fast Food">
+                <div class="description">Fastfood</div>
+            </label>
+        </div>
+
+        <div class="mealOption">
+            <input type="radio" id="snack" name="meal" value="Snack">
+            <label for="snack">
+                <img src="52ef94c245f83d3c7df6783cfac2167d.jpg" alt="Snack">
+                <div class="description">Snack</div>
+            </label>
+        </div>
+
+        <div class="mealOption">
+            <input type="radio" id="airbnb" name="meal" value="Airbnb+Faire a manger ensemble">
+            <label for="airbnb">
+                <img src="gettyimages-646714512-1024x1024.jpg" alt="Airbnb/Faire a manger ensemble">
+                <div class="description">Cuisiner ensemble à la maison</div>
+            </label>
+        </div>
+    </div>
+</body>
+</html>
+
