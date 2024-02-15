@@ -120,10 +120,25 @@
             <input type="radio" id="airbnb" name="meal" value="Airbnb+Faire a manger ensemble">
             <label for="airbnb">
                 <img src="gettyimages-646714512-1024x1024.jpg" alt="Airbnb/Faire a manger ensemble">
-                <div class="description">Airbnb+Faire a manger ensemble</div>
+                <div class="description">Cuisiner ensemble à la maison</div>
             </label>
         </div>
     </div>
+</div>
+
+<button id="validateButton" onclick="validateChoice()">Valider</button>
+
+<script>
+    function validateChoice() {
+        var selectedMeal = document.querySelector('input[name="meal"]:checked');
+
+        if (selectedMeal) {
+            window.location.href = "fin.html";
+        } else {
+            alert("Veuillez choisir un plat avant de valider.");
+        }
+    }
+</script>
 </body>
 </html>
 
